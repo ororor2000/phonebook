@@ -2,7 +2,6 @@
 #include <string.h>
 #include <malloc.h>
 
-
 typedef struct Record
 {
 	char name[10];	
