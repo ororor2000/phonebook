@@ -1,18 +1,8 @@
 #include <stdio.h>
-#include <string.h>
 #include <malloc.h>
+#include "phonebook.h"
 
-typedef struct Record
-{
-	char name[10];	
-	char phone_number[11];
-} record;
-
-typedef struct Node {
-    record* record;
-    struct Node* next;
-} node;
-
-
-void add_record();
-void get_records(node* head);
+void add_record_cli(record* new_record);
+void print_records_cli();
+void print_record_by_name_cli();
+void delete_record_cli();
