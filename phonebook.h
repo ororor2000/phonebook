@@ -18,8 +18,13 @@ typedef struct Node {
 
 
 void add_record(record* new_record);
+
 void write_record_list_to_file(node* records);
+
 node* get_records();
+
 int get_list_size();
+
 record* get_record_by_name(char* name);
+
 void delete_record(int id);

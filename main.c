@@ -1,7 +1,7 @@
 
 #include "main.h"
 
-void add_record_cli(record* new_record)
+void add_record_cli()
 {
 	system("cls");
 	printf("####### Add New Record #######\n");
@@ -28,7 +28,7 @@ void add_record_cli(record* new_record)
 void print_records_cli()
 {
 	system("cls");
-	printf("####### Add New Record #######\n");
+	printf("####### Record List #######\n");
 	
 	node* records = get_records();
 	node* tmp;
@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
 		{
 			goto input;
 		}
-
+	
 		switch (choice)
 		{
 			case 1:

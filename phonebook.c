@@ -96,18 +96,26 @@ record* get_record_by_name(char* name)
 void delete_record(int id)
 {
 	node* records = get_records();
-	node* tmp;
+	node* tmp = records;
 
-	while (records != NULL)
+	
+	if (tmp->record.id ==  id)
 	{
-
-		if (records->record.id ==  id)
-			records->next = records->next->next;
-
-		records = records->next;
+		tmp = tmp->next;
+	}
+	else
+	{
+		while (tmp != NULL)
+		{
+			if (tmp->next->record.id ==  id)
+				tmp->next = tmp->next->next;
+			
+			tmp = tmp->next;
+		}			
 	}
 
 	write_record_list_to_file(records);
+
 
 	while (records != NULL)
 	{
@@ -117,4 +125,3 @@ void delete_record(int id)
 		free(tmp);
 	}		
 }
-
